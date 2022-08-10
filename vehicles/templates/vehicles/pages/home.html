@@ -1,0 +1,16 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Home | {% endblock title %}
+
+{% block content %}
+<div class="main-content main-content-list container ">
+    {% for customer, vehicles in customer_vehicles.items %}
+        {% include 'vehicles/partials/customer.html'%}
+    {% empty %}
+    <div class="center m-y">
+        <h1>No costumers found here!</h1>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}

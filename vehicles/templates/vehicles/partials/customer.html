@@ -1,0 +1,68 @@
+<div class="vehicle vehicle-list-item">
+
+    <div class="vehicle-customer-data">
+
+        <div class="center m-y">
+            <h2>IDENTIFICATION:</h2>
+        </div>
+
+        <div class="vehicle-customer-datas">
+
+            <span class="customer-data">
+                <i class="fa-solid fa-person"></i>
+                NAME - {{ customer.name }}
+            </span>
+
+            <span class="customer-data">
+                <i class="fa-solid fa-id-card"></i>
+                SSN - {{ customer.social_security_number }}
+            </span>
+
+            <span class="customer-data">
+                <i class="fa-solid fa-hourglass-half"></i>
+                AGE - {{ customer.age }} years
+            </span>
+            {% if not vehicles %}
+                <span class="customer-data">
+                    <i class="fa-solid fa-circle-check"></i>
+                    SALES OPPORTUNITY!
+                </span>
+            {% endif %}
+
+        </div>
+
+
+    </div>
+
+    <div class="vehicle-customer-vehicle">
+
+        <div class="center m-y">
+            <h2>CARS:</h2>
+        </div>
+
+        {% for vehicle in vehicles %}
+
+            <div class="vehicle-customer-vehicles">
+
+                <span class="vehicle-data">
+                    <i class="fa-solid fa-fill"></i>
+                    COLOR: {{ vehicle.get_color_display }}
+                </span>
+
+                <span class="vehicle-data">
+                    <i class="fa-solid fa-car-side"></i>
+                    MODEL: {{ vehicle.get_model_display }}
+                </span>
+            </div>
+
+        {% empty %}
+
+            <div class="center m-y">
+                The costumer has no cars!
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
