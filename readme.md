@@ -111,7 +111,7 @@ Just click in "customers" field and fill in the fields.
 Just click in "vehicles" field and fill in the fields.
 ```
 
-#### 5 - Run tests:
+### 5 - Run tests:
 
 ```text
 python manage.py test
